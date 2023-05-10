@@ -25,9 +25,7 @@ void push(int val){
 
 int pop(){
 	if (topofstack == 0){
-		char errormsg[] = "Stack is empty";
-		fatal(errormsg);
-		usage();
+		printf("Error: Stack is empty!");
 		exit(0);
 	}
 	else {
@@ -41,15 +39,12 @@ int pop(){
 void fillStack(int argc, char **argv){
 	int argc2 = argc - 2;
 	if (argc2 % 5 != 0 || argc2 > (atoi(argv[1])*5)){
-		char errormsg[] =  "Wrong number of cards";
-		fatal(errormsg);
-		usage();
+		printf("Error: Wrong number of cards!\n");
 		exit(0);
 	}
 	for (int x = 2; x != argc; x++){
 		if (atoi(argv[x]) < 1 || atoi(argv[x]) > 10){
-			char errormsg[] = "Cards must be between 1 and 10\n";
-			fatal(errormsg);
+			printf("Error: Cards must be between 1 and 10\n!");
 			usage();
 			exit(0);
 		}
