@@ -61,12 +61,17 @@ void positionFinder(int level, struct node* head){
 
 
 void printList(struct node* list){
-	printf("[ ");
+	printf("(");
 	while (list){
-		printf("%d/%d ", list->num, list->den);
-		list = list->next;
+	    if (list->next == NULL){
+	        printf("%d/%d", list->num, list->den);
+	        list = list->next;
+	    }
+	    else {
+		printf("%d/%d, ", list->num, list->den);
+		list = list->next; }
 	}
-	printf("]");
+	printf(")");
 }
 
 
@@ -79,6 +84,10 @@ void freeList(struct node* list){
 }
 
 int main(int argc, char* argv[]){
+    if (argc != 2){
+    printf("Usage: farey <n>\n      where n >= 1 is the level of the farey sequence");
+    exit(0);
+    }
 	head = makeFareyNode(1, 1, NULL);
 	makeFareyNode(0, 1, head);
 	printList(head);

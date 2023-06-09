@@ -137,6 +137,7 @@ void showWinners(int nPlayers){
 
 
 int main(int argc, char *argv[]){
+
 	srand(time(NULL));
 	if (atoi(argv[1]) > 10 || atoi(argv[1]) < 2){
 		char errormsg[] = "         The number of players must be between 2 and 10\n"; 
