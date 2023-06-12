@@ -12,7 +12,7 @@ int main(int argc, char** argv){
         print_tree(bintree);
         printf("\n");
     }
-    printf("\nReverse:  ");
+    //printf("\nReverse:  ");
     print_tree_reverse(bintree);
     printf("\n");
     free(bintree);
